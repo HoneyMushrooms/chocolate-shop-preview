@@ -10,13 +10,13 @@
     <link rel="icon" href="data:,">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="dark-refinements.css">
-    <script src="app.js" defer>
+    <script src="app.js?v=2" defer>
     </script>
   </head>
   <body class="dark">
     <div id="site">
-      <div class="wrap">
-        <header class="top">
+      <div class="site-header">
+        <header class="top wrap">
           <a class="wordmark" href="#">
             тихое какао
             <small>
@@ -24,9 +24,17 @@
             </small>
           </a>
           <nav id="main-nav" class="nav" aria-label="Основная навигация">
-            <a href="#categories">
-              Каталог
-            </a>
+            <div class="catalog-menu">
+              <button type="button" class="catalog-toggle" aria-expanded="false" aria-controls="catalog-links">
+                Каталог <svg class="catalog-indicator" viewBox="0 0 10 6" aria-hidden="true" focusable="false"><path d="M0 0h10L5 6Z" fill="currentColor"/></svg>
+              </button>
+              <ul id="catalog-links" class="catalog-links" hidden>
+                <li><a href="#categories">Весь каталог</a></li>
+                <li><a href="#category-bars">Шоколадные плитки</a></li>
+                <li><a href="#category-boxes">Наборы конфет</a></li>
+                <li><a href="#category-gifts">Подарочные наборы</a></li>
+              </ul>
+            </div>
             <a href="#builder">
               Собрать коробку
             </a>
@@ -54,6 +62,8 @@
             </button>
           </div>
         </header>
+      </div>
+      <div class="wrap">
         <main>
           <!-- Первый экран -->
           <section class="hero">
@@ -98,7 +108,7 @@
               </a>
             </div>
             <div class="categories">
-              <a class="category" href="#popular">
+              <a class="category" id="category-bars" href="#popular">
                 <div class="photo">
                   <img src="assets/pistachio-bars.png" alt="Шоколадные плитки — концептуальное изображение" loading="lazy">
                 </div>
@@ -113,7 +123,7 @@
                   </div>
                 </div>
               </a>
-              <a class="category" href="#popular">
+              <a class="category" id="category-boxes" href="#popular">
                 <div class="photo">
                   <img src="assets/chocolate-editorial.png" alt="Наборы конфет — концептуальное изображение" loading="lazy">
                 </div>
@@ -128,7 +138,7 @@
                   </div>
                 </div>
               </a>
-              <a class="category" href="#popular">
+              <a class="category" id="category-gifts" href="#popular">
                 <div class="photo">
                   <img src="assets/cherry-gift.png" alt="Подарочные наборы — концептуальное изображение" loading="lazy">
                 </div>
@@ -162,6 +172,7 @@
             </div>
             <div class="products">
               <article class="product">
+                <button type="button" class="product-open" aria-label="Подробнее: Темный шоколад «Классика»" data-info="Карточка товара «Темный шоколад Классика» будет доступна после подключения каталога."></button>
                 <div class="product-photo crop-bar">
                   <span class="tag">
                     Наш выбор
@@ -186,6 +197,7 @@
                 </div>
               </article>
               <article class="product">
+                <button type="button" class="product-open" aria-label="Подробнее: Набор «Маленькая пауза»" data-info="Карточка товара «Набор Маленькая пауза» будет доступна после подключения каталога."></button>
                 <div class="product-photo crop-box">
                   <img src="assets/chocolate-editorial.png" alt="Концептуальное изображение шоколада" loading="lazy">
                 </div>
@@ -207,6 +219,7 @@
                 </div>
               </article>
               <article class="product">
+                <button type="button" class="product-open" aria-label="Подробнее: Молочный шоколад с фундуком" data-info="Карточка товара «Молочный шоколад с фундуком» будет доступна после подключения каталога."></button>
                 <div class="product-photo crop-bar">
                   <img src="assets/chocolate-editorial.png" alt="Концептуальное изображение шоколада" loading="lazy">
                 </div>
@@ -228,6 +241,7 @@
                 </div>
               </article>
               <article class="product">
+                <button type="button" class="product-open" aria-label="Подробнее: Набор «Коллекция вкусов»" data-info="Карточка товара «Набор Коллекция вкусов» будет доступна после подключения каталога."></button>
                 <div class="product-photo crop-gift">
                   <span class="tag">
                     12 вкусов
